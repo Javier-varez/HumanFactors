@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF4CB4F518EE5894000E5A3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F418EE5894000E5A3D /* Foundation.framework */; };
+		CF4CB4F718EE5894000E5A3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F618EE5894000E5A3D /* CoreGraphics.framework */; };
+		CF4CB4F918EE5894000E5A3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F818EE5894000E5A3D /* UIKit.framework */; };
+		CF4CB4FF18EE5894000E5A3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF4CB4FD18EE5894000E5A3D /* InfoPlist.strings */; };
+		CF4CB50118EE5894000E5A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CB50018EE5894000E5A3D /* main.m */; };
+		CF4CB50518EE5894000E5A3D /* HFPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CB50418EE5894000E5A3D /* HFPAppDelegate.m */; };
+		CF4CB50818EE5894000E5A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4CB50618EE5894000E5A3D /* Main.storyboard */; };
+		CF4CB50B18EE5894000E5A3D /* HFPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CB50A18EE5894000E5A3D /* HFPMasterViewController.m */; };
+		CF4CB50E18EE5894000E5A3D /* HFPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CB50D18EE5894000E5A3D /* HFPDetailViewController.m */; };
+		CF4CB51018EE5894000E5A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4CB50F18EE5894000E5A3D /* Images.xcassets */; };
+		CF4CB51718EE5894000E5A3D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB51618EE5894000E5A3D /* XCTest.framework */; };
+		CF4CB51818EE5894000E5A3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F418EE5894000E5A3D /* Foundation.framework */; };
+		CF4CB51918EE5894000E5A3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F818EE5894000E5A3D /* UIKit.framework */; };
+		CF4CB52118EE5894000E5A3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF4CB51F18EE5894000E5A3D /* InfoPlist.strings */; };
+		CF4CB52318EE5894000E5A3D /* HumanFactorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CB52218EE5894000E5A3D /* HumanFactorsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF4CB51A18EE5894000E5A3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF4CB4E918EE5893000E5A3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF4CB4F018EE5893000E5A3D;
+			remoteInfo = HumanFactors;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF4CB4F118EE5894000E5A3D /* HumanFactors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanFactors.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4CB4F418EE5894000E5A3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF4CB4F618EE5894000E5A3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CF4CB4F818EE5894000E5A3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CF4CB4FC18EE5894000E5A3D /* HumanFactors-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HumanFactors-Info.plist"; sourceTree = "<group>"; };
+		CF4CB4FE18EE5894000E5A3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF4CB50018EE5894000E5A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF4CB50218EE5894000E5A3D /* HumanFactors-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HumanFactors-Prefix.pch"; sourceTree = "<group>"; };
+		CF4CB50318EE5894000E5A3D /* HFPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFPAppDelegate.h; sourceTree = "<group>"; };
+		CF4CB50418EE5894000E5A3D /* HFPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFPAppDelegate.m; sourceTree = "<group>"; };
+		CF4CB50718EE5894000E5A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF4CB50918EE5894000E5A3D /* HFPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFPMasterViewController.h; sourceTree = "<group>"; };
+		CF4CB50A18EE5894000E5A3D /* HFPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFPMasterViewController.m; sourceTree = "<group>"; };
+		CF4CB50C18EE5894000E5A3D /* HFPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFPDetailViewController.h; sourceTree = "<group>"; };
+		CF4CB50D18EE5894000E5A3D /* HFPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFPDetailViewController.m; sourceTree = "<group>"; };
+		CF4CB50F18EE5894000E5A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CF4CB51518EE5894000E5A3D /* HumanFactorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HumanFactorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4CB51618EE5894000E5A3D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CF4CB51E18EE5894000E5A3D /* HumanFactorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HumanFactorsTests-Info.plist"; sourceTree = "<group>"; };
+		CF4CB52018EE5894000E5A3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF4CB52218EE5894000E5A3D /* HumanFactorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HumanFactorsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF4CB4EE18EE5893000E5A3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4CB4F718EE5894000E5A3D /* CoreGraphics.framework in Frameworks */,
+				CF4CB4F918EE5894000E5A3D /* UIKit.framework in Frameworks */,
+				CF4CB4F518EE5894000E5A3D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF4CB51218EE5894000E5A3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4CB51718EE5894000E5A3D /* XCTest.framework in Frameworks */,
+				CF4CB51918EE5894000E5A3D /* UIKit.framework in Frameworks */,
+				CF4CB51818EE5894000E5A3D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF4CB4E818EE5893000E5A3D = {
+			isa = PBXGroup;
+			children = (
+				CF4CB4FA18EE5894000E5A3D /* HumanFactors */,
+				CF4CB51C18EE5894000E5A3D /* HumanFactorsTests */,
+				CF4CB4F318EE5894000E5A3D /* Frameworks */,
+				CF4CB4F218EE5894000E5A3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF4CB4F218EE5894000E5A3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB4F118EE5894000E5A3D /* HumanFactors.app */,
+				CF4CB51518EE5894000E5A3D /* HumanFactorsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF4CB4F318EE5894000E5A3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB4F418EE5894000E5A3D /* Foundation.framework */,
+				CF4CB4F618EE5894000E5A3D /* CoreGraphics.framework */,
+				CF4CB4F818EE5894000E5A3D /* UIKit.framework */,
+				CF4CB51618EE5894000E5A3D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF4CB4FA18EE5894000E5A3D /* HumanFactors */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB50318EE5894000E5A3D /* HFPAppDelegate.h */,
+				CF4CB50418EE5894000E5A3D /* HFPAppDelegate.m */,
+				CF4CB50618EE5894000E5A3D /* Main.storyboard */,
+				CF4CB50918EE5894000E5A3D /* HFPMasterViewController.h */,
+				CF4CB50A18EE5894000E5A3D /* HFPMasterViewController.m */,
+				CF4CB50C18EE5894000E5A3D /* HFPDetailViewController.h */,
+				CF4CB50D18EE5894000E5A3D /* HFPDetailViewController.m */,
+				CF4CB50F18EE5894000E5A3D /* Images.xcassets */,
+				CF4CB4FB18EE5894000E5A3D /* Supporting Files */,
+			);
+			path = HumanFactors;
+			sourceTree = "<group>";
+		};
+		CF4CB4FB18EE5894000E5A3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB4FC18EE5894000E5A3D /* HumanFactors-Info.plist */,
+				CF4CB4FD18EE5894000E5A3D /* InfoPlist.strings */,
+				CF4CB50018EE5894000E5A3D /* main.m */,
+				CF4CB50218EE5894000E5A3D /* HumanFactors-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF4CB51C18EE5894000E5A3D /* HumanFactorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB52218EE5894000E5A3D /* HumanFactorsTests.m */,
+				CF4CB51D18EE5894000E5A3D /* Supporting Files */,
+			);
+			path = HumanFactorsTests;
+			sourceTree = "<group>";
+		};
+		CF4CB51D18EE5894000E5A3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB51E18EE5894000E5A3D /* HumanFactorsTests-Info.plist */,
+				CF4CB51F18EE5894000E5A3D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF4CB4F018EE5893000E5A3D /* HumanFactors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF4CB52618EE5894000E5A3D /* Build configuration list for PBXNativeTarget "HumanFactors" */;
+			buildPhases = (
+				CF4CB4ED18EE5893000E5A3D /* Sources */,
+				CF4CB4EE18EE5893000E5A3D /* Frameworks */,
+				CF4CB4EF18EE5893000E5A3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HumanFactors;
+			productName = HumanFactors;
+			productReference = CF4CB4F118EE5894000E5A3D /* HumanFactors.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF4CB51418EE5894000E5A3D /* HumanFactorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF4CB52918EE5894000E5A3D /* Build configuration list for PBXNativeTarget "HumanFactorsTests" */;
+			buildPhases = (
+				CF4CB51118EE5894000E5A3D /* Sources */,
+				CF4CB51218EE5894000E5A3D /* Frameworks */,
+				CF4CB51318EE5894000E5A3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF4CB51B18EE5894000E5A3D /* PBXTargetDependency */,
+			);
+			name = HumanFactorsTests;
+			productName = HumanFactorsTests;
+			productReference = CF4CB51518EE5894000E5A3D /* HumanFactorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF4CB4E918EE5893000E5A3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HFP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Francisco Javier Álvarez García";
+				TargetAttributes = {
+					CF4CB51418EE5894000E5A3D = {
+						TestTargetID = CF4CB4F018EE5893000E5A3D;
+					};
+				};
+			};
+			buildConfigurationList = CF4CB4EC18EE5893000E5A3D /* Build configuration list for PBXProject "HumanFactors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF4CB4E818EE5893000E5A3D;
+			productRefGroup = CF4CB4F218EE5894000E5A3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF4CB4F018EE5893000E5A3D /* HumanFactors */,
+				CF4CB51418EE5894000E5A3D /* HumanFactorsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF4CB4EF18EE5893000E5A3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4CB51018EE5894000E5A3D /* Images.xcassets in Resources */,
+				CF4CB4FF18EE5894000E5A3D /* InfoPlist.strings in Resources */,
+				CF4CB50818EE5894000E5A3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF4CB51318EE5894000E5A3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4CB52118EE5894000E5A3D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF4CB4ED18EE5893000E5A3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4CB50E18EE5894000E5A3D /* HFPDetailViewController.m in Sources */,
+				CF4CB50118EE5894000E5A3D /* main.m in Sources */,
+				CF4CB50518EE5894000E5A3D /* HFPAppDelegate.m in Sources */,
+				CF4CB50B18EE5894000E5A3D /* HFPMasterViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF4CB51118EE5894000E5A3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4CB52318EE5894000E5A3D /* HumanFactorsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF4CB51B18EE5894000E5A3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF4CB4F018EE5893000E5A3D /* HumanFactors */;
+			targetProxy = CF4CB51A18EE5894000E5A3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF4CB4FD18EE5894000E5A3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF4CB4FE18EE5894000E5A3D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF4CB50618EE5894000E5A3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF4CB50718EE5894000E5A3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF4CB51F18EE5894000E5A3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF4CB52018EE5894000E5A3D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF4CB52418EE5894000E5A3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CF4CB52518EE5894000E5A3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF4CB52718EE5894000E5A3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HumanFactors/HumanFactors-Prefix.pch";
+				INFOPLIST_FILE = "HumanFactors/HumanFactors-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CF4CB52818EE5894000E5A3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HumanFactors/HumanFactors-Prefix.pch";
+				INFOPLIST_FILE = "HumanFactors/HumanFactors-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CF4CB52A18EE5894000E5A3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HumanFactors.app/HumanFactors";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HumanFactors/HumanFactors-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HumanFactorsTests/HumanFactorsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CF4CB52B18EE5894000E5A3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HumanFactors.app/HumanFactors";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HumanFactors/HumanFactors-Prefix.pch";
+				INFOPLIST_FILE = "HumanFactorsTests/HumanFactorsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF4CB4EC18EE5893000E5A3D /* Build configuration list for PBXProject "HumanFactors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF4CB52418EE5894000E5A3D /* Debug */,
+				CF4CB52518EE5894000E5A3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF4CB52618EE5894000E5A3D /* Build configuration list for PBXNativeTarget "HumanFactors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF4CB52718EE5894000E5A3D /* Debug */,
+				CF4CB52818EE5894000E5A3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF4CB52918EE5894000E5A3D /* Build configuration list for PBXNativeTarget "HumanFactorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF4CB52A18EE5894000E5A3D /* Debug */,
+				CF4CB52B18EE5894000E5A3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF4CB4E918EE5893000E5A3D /* Project object */;
+}
