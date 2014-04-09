@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HFPDetailViewController : UIViewController
+@interface HFPDetailViewController : UIViewController <UITextViewDelegate>
 
-@property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *letterCountLabel;
+- (IBAction)resetButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *secondsLabel;
 @end

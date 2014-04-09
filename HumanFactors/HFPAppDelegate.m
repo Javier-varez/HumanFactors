@@ -8,11 +8,18 @@
 
 #import "HFPAppDelegate.h"
 
+#import "HFPDetailViewController.h"
+
 @implementation HFPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0f]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:188/255.0 green:18/255.0 blue:114/255.0 alpha:1.0f]];
+    
+    [MagicalRecord setupCoreDataStack];
+    
     return YES;
 }
 							
@@ -26,6 +33,11 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
+    
+    HFPDetailViewController* controller = (HFPDetailViewController*)[nav topViewController];
+    [controller.textView resignFirstResponder];
+    [controller resetButtonPressed:nil];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -41,6 +53,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [MagicalRecord cleanUp];
 }
 
 @end
