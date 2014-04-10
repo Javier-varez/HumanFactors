@@ -11,7 +11,7 @@
 @implementation BouncePresentAnimationController
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.75;
+    return 0.6;
 }
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -21,23 +21,35 @@
     CGRect finalFrame = [transitionContext finalFrameForViewController:toViewController];
     UIView *containterView = [transitionContext containerView];
     
+    CGRect initialFrame = CGRectMake(finalFrame.size.width/2.0 - 0.1*finalFrame.size.width/2.0,
+                                     finalFrame.size.height/2.0 - 0.1*finalFrame.size.height/2.0,
+                                     0.1*finalFrame.size.width ,
+                                     0.1*finalFrame.size.height);
     
+    toViewController.view.frame = finalFrame;
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    UIView *snapshot = [toViewController.view snapshotViewAfterScreenUpdates:YES];
     
-    toViewController.view.frame = CGRectOffset(finalFrame, 0, screenBounds.size.height);
+    snapshot.frame = initialFrame;
     
-    [containterView addSubview:toViewController.view];
+    [containterView addSubview:snapshot];
     
     NSTimeInterval transitionDuration = [self transitionDuration:transitionContext];
     
-    [UIView animateWithDuration:transitionDuration animations:^{
-        fromViewController.view.alpha = 0.5;
-        toViewController.view.frame = finalFrame;
-    } completion:^(BOOL finished){
-        fromViewController.view.alpha = 1.0;
-        [transitionContext completeTransition:YES];
-    }];
+    [UIView animateWithDuration:transitionDuration
+                          delay:0.0
+         usingSpringWithDamping:0.5
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                            fromViewController.view.alpha = 0.5;
+                            snapshot.frame = finalFrame;
+                        }
+                     completion:^(BOOL finished){
+                            fromViewController.view.alpha = 1.0;
+                            [snapshot removeFromSuperview];
+                            [containterView addSubview:toViewController.view];
+                            [transitionContext completeTransition:YES];
+                        }];
 }
 
 @end
