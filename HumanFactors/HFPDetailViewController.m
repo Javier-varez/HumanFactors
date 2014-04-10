@@ -13,6 +13,9 @@
 #import "tickGestureRecognizer.h"
 #import "crossGestureRecognizer.h"
 
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0)
+
 @interface HFPDetailViewController ()
 
 @end
@@ -72,7 +75,7 @@
         self.currentPhraseMeasure = nil;
         self.textView.text = @"";
         
-        self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
+        self.tickImageView.frame = CGRectMake(98, 165-(!IS_IPHONE_5 * 40), 125, 92);
         [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
                                      options:UIViewKeyframeAnimationOptionCalculationModeLinear
@@ -85,7 +88,7 @@
                                       [UIView addKeyframeWithRelativeStartTime:0.0
                                                               relativeDuration:1.0
                                                                     animations:^{
-                                                                        self.tickImageView.frame = CGRectMake(44, 124, 233, 174);
+                                                                        self.tickImageView.frame = CGRectMake(44, 124-(!IS_IPHONE_5 * 40), 233, 174);
                                                                     }];
                                       [UIView addKeyframeWithRelativeStartTime:0.80
                                                               relativeDuration:0.20
@@ -94,7 +97,7 @@
                                                                     }];
                                   }
                                   completion:^(BOOL finished){
-                                      self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
+                                      self.tickImageView.frame = CGRectMake(98, 165-(!IS_IPHONE_5 * 40), 125, 92);
                                   }];
     }
 }
@@ -108,7 +111,7 @@
         self.currentPhraseMeasure = nil;
         self.textView.text = @"";
         
-        self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
+        self.crossImageView.frame = CGRectMake(114, 165-(!IS_IPHONE_5 * 40), 92, 92);
         [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
                                      options:UIViewKeyframeAnimationOptionCalculationModeLinear
@@ -121,7 +124,7 @@
                                       [UIView addKeyframeWithRelativeStartTime:0.0
                                                               relativeDuration:1.0
                                                                     animations:^{
-                                                                        self.crossImageView.frame = CGRectMake(73, 124, 174, 174);
+                                                                        self.crossImageView.frame = CGRectMake(73, 124-(!IS_IPHONE_5 * 40), 174, 174);
                                                                     }];
                                       [UIView addKeyframeWithRelativeStartTime:0.80
                                                               relativeDuration:0.20
@@ -130,7 +133,7 @@
                                                                     }];
                                   }
                                   completion:^(BOOL finished){
-                                      self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
+                                      self.crossImageView.frame = CGRectMake(114, 165-(!IS_IPHONE_5 * 40), 92, 92);
                                   }];
     }
 }

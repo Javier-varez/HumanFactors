@@ -228,25 +228,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="tub-2R-LHg">
-                                <rect key="frame" x="38" y="0.0" width="245" height="245"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="tub-2R-LHg">
+                                <rect key="frame" x="38" y="62" width="245" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="245" id="1fO-h6-wlu"/>
+                                    <constraint firstAttribute="width" constant="245" id="61Q-wU-Vhn"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please, enter a username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0W-HM-X0V">
-                                <rect key="frame" x="20" y="222" width="200" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, enter a username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0W-HM-X0V">
+                                <rect key="frame" x="20" y="284" width="200" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="82c-IH-4W6"/>
+                                    <constraint firstAttribute="height" constant="21" id="Cuo-Hz-lro"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZw-4X-bI5">
-                                <rect key="frame" x="20" y="251" width="178" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZw-4X-bI5">
+                                <rect key="frame" x="20" y="313" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="bCa-b4-jyx"/>
+                                    <constraint firstAttribute="height" constant="30" id="zId-mo-B0b"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-Ed-BDo">
-                                <rect key="frame" x="216" y="251" width="84" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-Ed-BDo">
+                                <rect key="frame" x="216" y="313" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="PQ1-rJ-fb9"/>
+                                    <constraint firstAttribute="height" constant="30" id="V64-Sw-e57"/>
+                                </constraints>
                                 <state key="normal" title="Get Started!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -256,6 +272,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="T0W-HM-X0V" firstAttribute="leading" secondItem="Tsb-qc-u1c" secondAttribute="leading" constant="20" id="47h-xP-McT"/>
+                            <constraint firstItem="FZw-4X-bI5" firstAttribute="leading" secondItem="Tsb-qc-u1c" secondAttribute="leading" constant="20" id="GVP-Hq-0Mf"/>
+                            <constraint firstItem="4lF-Ed-BDo" firstAttribute="top" secondItem="T0W-HM-X0V" secondAttribute="bottom" constant="8" id="Hfb-Kk-dLl"/>
+                            <constraint firstItem="tub-2R-LHg" firstAttribute="leading" secondItem="Tsb-qc-u1c" secondAttribute="leading" constant="38" id="Jkm-I9-nBg"/>
+                            <constraint firstItem="4lF-Ed-BDo" firstAttribute="leading" secondItem="FZw-4X-bI5" secondAttribute="trailing" constant="18" id="Rfu-nN-CHo"/>
+                            <constraint firstItem="M38-yU-7WS" firstAttribute="top" secondItem="4lF-Ed-BDo" secondAttribute="bottom" constant="225" id="Wrh-hy-SHg"/>
+                            <constraint firstItem="M38-yU-7WS" firstAttribute="top" secondItem="FZw-4X-bI5" secondAttribute="bottom" constant="225" id="hfN-WL-MSN"/>
+                            <constraint firstItem="4lF-Ed-BDo" firstAttribute="top" secondItem="tub-2R-LHg" secondAttribute="bottom" constant="6" id="yOS-TC-H0Y"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="textField" destination="FZw-4X-bI5" id="TBc-28-8dh"/>
