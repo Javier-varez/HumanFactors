@@ -116,6 +116,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         HFPUsernameViewController *userVC = [storyboard instantiateViewControllerWithIdentifier:@"UserVC"];
+        userVC.allowSwipeDown = YES;
         [self presentViewController:userVC animated:YES completion:nil];
     }
 }

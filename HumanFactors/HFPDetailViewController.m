@@ -73,7 +73,7 @@
         self.textView.text = @"";
         
         self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
-        [UIView animateKeyframesWithDuration:1.5
+        [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
                                      options:UIViewKeyframeAnimationOptionCalculationModeLinear
                                   animations:^{
@@ -81,17 +81,20 @@
                                                               relativeDuration:0.20
                                                                     animations:^{
                                                                         self.tickImageView.alpha = 1.0;
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:1.0
+                                                                    animations:^{
                                                                         self.tickImageView.frame = CGRectMake(44, 124, 233, 174);
                                                                     }];
                                       [UIView addKeyframeWithRelativeStartTime:0.80
                                                               relativeDuration:0.20
                                                                     animations:^{
                                                                         self.tickImageView.alpha = 0.0;
-                                                                        self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
                                                                     }];
                                   }
                                   completion:^(BOOL finished){
-                                      
+                                      self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
                                   }];
     }
 }
@@ -106,7 +109,7 @@
         self.textView.text = @"";
         
         self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
-        [UIView animateKeyframesWithDuration:1.5
+        [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
                                      options:UIViewKeyframeAnimationOptionCalculationModeLinear
                                   animations:^{
@@ -114,17 +117,20 @@
                                                               relativeDuration:0.20
                                                                     animations:^{
                                                                         self.crossImageView.alpha = 1.0;
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:1.0
+                                                                    animations:^{
                                                                         self.crossImageView.frame = CGRectMake(73, 124, 174, 174);
                                                                     }];
                                       [UIView addKeyframeWithRelativeStartTime:0.80
                                                               relativeDuration:0.20
                                                                     animations:^{
                                                                         self.crossImageView.alpha = 0.0;
-                                                                        self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
                                                                     }];
                                   }
                                   completion:^(BOOL finished){
-                                      
+                                      self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
                                   }];
     }
 }

@@ -31,6 +31,16 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [self.textField becomeFirstResponder];
+    if (self.allowSwipeDown) {
+        UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissToPreviousViewController)];
+        swipe.direction = UISwipeGestureRecognizerDirectionDown;
+        
+        [self.view addGestureRecognizer:swipe];
+    }
+}
+
+-(void)dismissToPreviousViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

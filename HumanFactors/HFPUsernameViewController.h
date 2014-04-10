@@ -11,5 +11,7 @@
 @interface HFPUsernameViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (nonatomic) BOOL allowSwipeDown;
+
 - (IBAction)buttonPressed:(id)sender;
 @end
