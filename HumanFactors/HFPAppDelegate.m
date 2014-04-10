@@ -39,7 +39,7 @@
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
     
     HFPDetailViewController* controller = (HFPDetailViewController*)[nav topViewController];
-    if (controller isKindOfClass:[HFPDetailViewController class]) [controller.textView resignFirstResponder];
+    if ([controller isKindOfClass:[HFPDetailViewController class]]) [controller.textView resignFirstResponder];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
