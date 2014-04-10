@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF483F6818F5E00300FD3AF1 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF483F6718F5E00300FD3AF1 /* iTunesArtwork@2x.png */; };
+		CF483F6B18F5E0DC00FD3AF1 /* HFPUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF483F6A18F5E0DC00FD3AF1 /* HFPUsernameViewController.m */; };
+		CF483F6E18F609F600FD3AF1 /* tickGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF483F6D18F609F600FD3AF1 /* tickGestureRecognizer.m */; };
+		CF483F7018F6376000FD3AF1 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF483F6F18F6376000FD3AF1 /* tick@2x.png */; };
+		CF483F7318F63FA900FD3AF1 /* crossGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF483F7218F63FA900FD3AF1 /* crossGestureRecognizer.m */; };
+		CF483F7518F64C8D00FD3AF1 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF483F7418F64C8D00FD3AF1 /* cross@2x.png */; };
 		CF4CB4F518EE5894000E5A3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F418EE5894000E5A3D /* Foundation.framework */; };
 		CF4CB4F718EE5894000E5A3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F618EE5894000E5A3D /* CoreGraphics.framework */; };
 		CF4CB4F918EE5894000E5A3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB4F818EE5894000E5A3D /* UIKit.framework */; };
@@ -50,7 +56,11 @@
 		CFA0450D18F4E90B0037970F /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA044EE18F4E90B0037970F /* MagicalRecord+Setup.m */; };
 		CFA0450E18F4E90B0037970F /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA044F018F4E90B0037970F /* MagicalRecord+ShorthandSupport.m */; };
 		CFA0450F18F4E90B0037970F /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA044F218F4E90B0037970F /* MagicalRecord.m */; };
+		CFA0451218F4EDBF0037970F /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFA0451018F4EDBF0037970F /* dataModel.xcdatamodeld */; };
+		CFA0451518F4EF4E0037970F /* PhraseMeasure.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA0451418F4EF4E0037970F /* PhraseMeasure.m */; };
 		CFCE766218EF435B00168802 /* ILOVETYPO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFCE766118EF435B00168802 /* ILOVETYPO@2x.png */; };
+		CFFF158C18F5880C00295274 /* HFPStatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF158B18F5880C00295274 /* HFPStatsTableViewController.m */; };
+		CFFF159018F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF158F18F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +74,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF483F6718F5E00300FD3AF1 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		CF483F6918F5E0DC00FD3AF1 /* HFPUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPUsernameViewController.h; sourceTree = "<group>"; };
+		CF483F6A18F5E0DC00FD3AF1 /* HFPUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPUsernameViewController.m; sourceTree = "<group>"; };
+		CF483F6C18F609F600FD3AF1 /* tickGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tickGestureRecognizer.h; sourceTree = "<group>"; };
+		CF483F6D18F609F600FD3AF1 /* tickGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tickGestureRecognizer.m; sourceTree = "<group>"; };
+		CF483F6F18F6376000FD3AF1 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
+		CF483F7118F63FA900FD3AF1 /* crossGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crossGestureRecognizer.h; sourceTree = "<group>"; };
+		CF483F7218F63FA900FD3AF1 /* crossGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = crossGestureRecognizer.m; sourceTree = "<group>"; };
+		CF483F7418F64C8D00FD3AF1 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 		CF4CB4F118EE5894000E5A3D /* HumanFactors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanFactors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4CB4F418EE5894000E5A3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF4CB4F618EE5894000E5A3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,7 +160,14 @@
 		CFA044F318F4E90B0037970F /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
 		CFA044F418F4E90B0037970F /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		CFA044F518F4E90B0037970F /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		CFA0451118F4EDBF0037970F /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFA0451318F4EF4E0037970F /* PhraseMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseMeasure.h; sourceTree = "<group>"; };
+		CFA0451418F4EF4E0037970F /* PhraseMeasure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhraseMeasure.m; sourceTree = "<group>"; };
 		CFCE766118EF435B00168802 /* ILOVETYPO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ILOVETYPO@2x.png"; sourceTree = "<group>"; };
+		CFFF158A18F5880C00295274 /* HFPStatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPStatsTableViewController.h; sourceTree = "<group>"; };
+		CFFF158B18F5880C00295274 /* HFPStatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPStatsTableViewController.m; sourceTree = "<group>"; };
+		CFFF158E18F58ABD00295274 /* HFPPhraseMeasureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPPhraseMeasureTableViewCell.h; sourceTree = "<group>"; };
+		CFFF158F18F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPPhraseMeasureTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +238,17 @@
 				CF4CB50618EE5894000E5A3D /* Main.storyboard */,
 				CF4CB50C18EE5894000E5A3D /* HFPDetailViewController.h */,
 				CF4CB50D18EE5894000E5A3D /* HFPDetailViewController.m */,
+				CFFF158A18F5880C00295274 /* HFPStatsTableViewController.h */,
+				CFFF158B18F5880C00295274 /* HFPStatsTableViewController.m */,
+				CFFF158E18F58ABD00295274 /* HFPPhraseMeasureTableViewCell.h */,
+				CFFF158F18F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m */,
+				CF483F6918F5E0DC00FD3AF1 /* HFPUsernameViewController.h */,
+				CF483F6A18F5E0DC00FD3AF1 /* HFPUsernameViewController.m */,
+				CF483F6C18F609F600FD3AF1 /* tickGestureRecognizer.h */,
+				CF483F6D18F609F600FD3AF1 /* tickGestureRecognizer.m */,
+				CF483F7118F63FA900FD3AF1 /* crossGestureRecognizer.h */,
+				CF483F7218F63FA900FD3AF1 /* crossGestureRecognizer.m */,
+				CFFF158D18F5882C00295274 /* Data Model */,
 				CF4CB50F18EE5894000E5A3D /* Images.xcassets */,
 				CFA044B918F4E90B0037970F /* MagicalRecord */,
 				CF4CB4FB18EE5894000E5A3D /* Supporting Files */,
@@ -223,6 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				CFCE766118EF435B00168802 /* ILOVETYPO@2x.png */,
+				CF483F6718F5E00300FD3AF1 /* iTunesArtwork@2x.png */,
+				CF483F6F18F6376000FD3AF1 /* tick@2x.png */,
+				CF483F7418F64C8D00FD3AF1 /* cross@2x.png */,
 				CF4CB4FC18EE5894000E5A3D /* HumanFactors-Info.plist */,
 				CF4CB4FD18EE5894000E5A3D /* InfoPlist.strings */,
 				CF4CB50018EE5894000E5A3D /* main.m */,
@@ -351,6 +391,16 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		CFFF158D18F5882C00295274 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFA0451018F4EDBF0037970F /* dataModel.xcdatamodeld */,
+				CFA0451318F4EF4E0037970F /* PhraseMeasure.h */,
+				CFA0451418F4EF4E0037970F /* PhraseMeasure.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,7 +482,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCE766218EF435B00168802 /* ILOVETYPO@2x.png in Resources */,
+				CF483F7018F6376000FD3AF1 /* tick@2x.png in Resources */,
+				CF483F6818F5E00300FD3AF1 /* iTunesArtwork@2x.png in Resources */,
 				CF4CB51018EE5894000E5A3D /* Images.xcassets in Resources */,
+				CF483F7518F64C8D00FD3AF1 /* cross@2x.png in Resources */,
 				CF4CB4FF18EE5894000E5A3D /* InfoPlist.strings in Resources */,
 				CF4CB50818EE5894000E5A3D /* Main.storyboard in Resources */,
 			);
@@ -453,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF483F7318F63FA900FD3AF1 /* crossGestureRecognizer.m in Sources */,
 				CF4CB50E18EE5894000E5A3D /* HFPDetailViewController.m in Sources */,
 				CFA0450118F4E90B0037970F /* NSManagedObject+MagicalRequests.m in Sources */,
 				CFA0450918F4E90B0037970F /* MagicalRecord+Actions.m in Sources */,
@@ -465,9 +519,11 @@
 				CF4CB50118EE5894000E5A3D /* main.m in Sources */,
 				CFA0450E18F4E90B0037970F /* MagicalRecord+ShorthandSupport.m in Sources */,
 				CFA044FF18F4E90B0037970F /* NSManagedObject+MagicalFinders.m in Sources */,
+				CFFF158C18F5880C00295274 /* HFPStatsTableViewController.m in Sources */,
 				CFA0450218F4E90B0037970F /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				CFA0450018F4E90B0037970F /* NSManagedObject+MagicalRecord.m in Sources */,
 				CFA0450418F4E90B0037970F /* NSManagedObjectContext+MagicalSaves.m in Sources */,
+				CFA0451518F4EF4E0037970F /* PhraseMeasure.m in Sources */,
 				CFA0450718F4E90B0037970F /* NSPersistentStore+MagicalRecord.m in Sources */,
 				CFA0450D18F4E90B0037970F /* MagicalRecord+Setup.m in Sources */,
 				CFA044F818F4E90B0037970F /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -478,6 +534,10 @@
 				CFA044FD18F4E90B0037970F /* NSManagedObject+MagicalAggregation.m in Sources */,
 				CFA0450518F4E90B0037970F /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				CFA044FE18F4E90B0037970F /* NSManagedObject+MagicalDataImport.m in Sources */,
+				CFFF159018F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m in Sources */,
+				CFA0451218F4EDBF0037970F /* dataModel.xcdatamodeld in Sources */,
+				CF483F6B18F5E0DC00FD3AF1 /* HFPUsernameViewController.m in Sources */,
+				CF483F6E18F609F600FD3AF1 /* tickGestureRecognizer.m in Sources */,
 				CFA044F918F4E90B0037970F /* NSNumber+MagicalDataImport.m in Sources */,
 				CFA0450F18F4E90B0037970F /* MagicalRecord.m in Sources */,
 				CF4CB50518EE5894000E5A3D /* HFPAppDelegate.m in Sources */,
@@ -716,6 +776,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CFA0451018F4EDBF0037970F /* dataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CFA0451118F4EDBF0037970F /* dataModel.xcdatamodel */,
+			);
+			currentVersion = CFA0451118F4EDBF0037970F /* dataModel.xcdatamodel */;
+			path = dataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CF4CB4E918EE5893000E5A3D /* Project object */;
 }

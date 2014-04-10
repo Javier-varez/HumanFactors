@@ -7,15 +7,18 @@
 //
 
 #import "HFPDetailViewController.h"
+#import "HFPStatsTableViewController.h"
+#import "HFPUsernameViewController.h"
+
+#import "tickGestureRecognizer.h"
+#import "crossGestureRecognizer.h"
+
 @interface HFPDetailViewController ()
 
 @end
 
 @implementation HFPDetailViewController {
     NSDate *_initialDate;
-    NSDate *_currentDate;
-    NSUInteger numData;
-    double total;
     
     CGRect openKeyboardFrame;
     CGRect closedKeyboardFrame;
@@ -34,13 +37,96 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification object:nil];
+    
+    //Set navigarion bar titleView
     UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ILOVETYPO.png"]];
-
     view.center = [self navigationItem].titleView.center;
-    
     view.frame = CGRectMake(view.center.x - 98/2, view.center.y - 25/2, 98, 25);
-    
     [self navigationItem].titleView = view;
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"User"]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        HFPUsernameViewController* usernameVC = [storyboard instantiateViewControllerWithIdentifier:@"UserVC"];
+        
+        [self presentViewController:usernameVC animated:YES completion:nil];
+    }
+    
+    tickGestureRecognizer *tickGesture = [[tickGestureRecognizer alloc] initWithTarget:self action:@selector(saveCurrentMeasure:)];
+    [self.view addGestureRecognizer:tickGesture];
+    tickGesture.delegate = self;
+    self.tickImageView.alpha = 0.0;
+    
+    crossGestureRecognizer *crossGesture = [[crossGestureRecognizer alloc] initWithTarget:self action:@selector(deleteCurrentMeasure:)];
+    crossGesture.delegate = self;
+    [self.view addGestureRecognizer:crossGesture];
+    
+    self.crossImageView.alpha = 0.0;
+}
+
+-(void)saveCurrentMeasure:(tickGestureRecognizer*)gesture {
+    NSLog(@"Tick Gesture received");
+    
+    if (self.currentPhraseMeasure) {
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        self.currentPhraseMeasure = nil;
+        self.textView.text = @"";
+        
+        self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
+        [UIView animateKeyframesWithDuration:1.5
+                                       delay:0.0
+                                     options:UIViewKeyframeAnimationOptionCalculationModeLinear
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:0.20
+                                                                    animations:^{
+                                                                        self.tickImageView.alpha = 1.0;
+                                                                        self.tickImageView.frame = CGRectMake(44, 124, 233, 174);
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.80
+                                                              relativeDuration:0.20
+                                                                    animations:^{
+                                                                        self.tickImageView.alpha = 0.0;
+                                                                        self.tickImageView.frame = CGRectMake(98, 165, 125, 92);
+                                                                    }];
+                                  }
+                                  completion:^(BOOL finished){
+                                      
+                                  }];
+    }
+}
+
+-(void)deleteCurrentMeasure:(crossGestureRecognizer*)gesture {
+    NSLog(@"Cross Gesture received");
+    
+    if (self.currentPhraseMeasure) {
+        [self.currentPhraseMeasure deleteEntity];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        self.currentPhraseMeasure = nil;
+        self.textView.text = @"";
+        
+        self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
+        [UIView animateKeyframesWithDuration:1.5
+                                       delay:0.0
+                                     options:UIViewKeyframeAnimationOptionCalculationModeLinear
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:0.20
+                                                                    animations:^{
+                                                                        self.crossImageView.alpha = 1.0;
+                                                                        self.crossImageView.frame = CGRectMake(73, 124, 174, 174);
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.80
+                                                              relativeDuration:0.20
+                                                                    animations:^{
+                                                                        self.crossImageView.alpha = 0.0;
+                                                                        self.crossImageView.frame = CGRectMake(114, 165, 92, 92);
+                                                                    }];
+                                  }
+                                  completion:^(BOOL finished){
+                                      
+                                  }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,23 +136,23 @@
 }
 
 -(void)textViewDidChange:(UITextView *)textView {
-    NSDate *date = [NSDate date];
-    
-    numData++;
-    
-    if (_currentDate) {
-        total = [date timeIntervalSinceDate:_initialDate];
-        self.label.text = [NSString stringWithFormat:@"TPM: %d",(int)(60/(total/(double)numData))];
-        self.letterCountLabel.text = [NSString stringWithFormat:@"CPM: %d", (int)(60/(total/(double)self.textView.text.length))];
-    }
-    else {
-        _initialDate = date;
+    if (!self.currentPhraseMeasure) {
+        self.currentPhraseMeasure = [PhraseMeasure createEntity];
+        self.currentPhraseMeasure.keyboard = [self.segmentedControl titleForSegmentAtIndex:[self.segmentedControl selectedSegmentIndex]];
     }
     
-    _currentDate = date;
+    //Set initial date
+    if (!self.currentPhraseMeasure.initialDate) {
+        self.currentPhraseMeasure.initialDate = [NSDate date];
+    }
     
-    if (_initialDate) {
-        self.secondsLabel.text = [NSString stringWithFormat:@"Eff: %f", (double)self.textView.text.length/numData];
+    //Update number of taps and text
+    self.currentPhraseMeasure.taps = @([self.currentPhraseMeasure.taps integerValue] + 1);
+    self.currentPhraseMeasure.text = self.textView.text;
+    
+    //Update time interval if taps >= 2...
+    if ([self.currentPhraseMeasure.taps integerValue] >= 2) {
+        self.currentPhraseMeasure.timeInterval = @([[NSDate date] timeIntervalSinceDate:self.currentPhraseMeasure.initialDate]);
     }
 }
 
@@ -124,17 +210,70 @@
     }
 }
 
-- (IBAction)resetButtonPressed:(id)sender {
-    _currentDate = nil;
-    _initialDate = nil;
-    total = 0.0;
-    numData = 0;
-    
-    self.textView.text = @"";
-    self.label.text = @"TPM: 0";
-    self.letterCountLabel.text = @"CPM: 0";
-    self.secondsLabel.text = @"Eff: 0";
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.textView resignFirstResponder];
 }
 
+- (IBAction)SCValueChanged:(id)sender {
+    if (self.currentPhraseMeasure) {
+        self.currentPhraseMeasure.keyboard = [self.segmentedControl titleForSegmentAtIndex:[self.segmentedControl selectedSegmentIndex]];
+
+    }
+}
+
+- (IBAction)presentStats:(id)sender {
+    if (self.currentPhraseMeasure){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save?"
+                                                        message:@"Do you wish to save last measurement?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Save"
+                                              otherButtonTitles:@"Discard...",nil];
+        [alert show];
+    }
+    else {
+        UIStoryboard *Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        HFPStatsTableViewController *toVC = [Storyboard instantiateViewControllerWithIdentifier:@"StatsVC"];
+        [self.navigationController pushViewController:toVC animated:YES];
+    }
+}
+
+
+#pragma mark Alert View Delegate Methods
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        if (self.currentPhraseMeasure) {
+            [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+            self.currentPhraseMeasure = nil;
+            self.textView.text = @"";
+        }
+    }
+    else {
+        if (self.currentPhraseMeasure) {
+            [self.currentPhraseMeasure deleteEntity];
+            [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+            self.currentPhraseMeasure = nil;
+            self.textView.text = @"";
+        }
+    }
+    
+    UIStoryboard *Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    HFPStatsTableViewController *toVC = [Storyboard instantiateViewControllerWithIdentifier:@"StatsVC"];
+    [self.navigationController pushViewController:toVC animated:YES];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    // return YES (the default) to allow the gesture recognizer to examine the touch object, NO to prevent the gesture recognizer from seeing this touch object.
+    if([touch.view isKindOfClass:[UISegmentedControl class]] == YES) {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 @end

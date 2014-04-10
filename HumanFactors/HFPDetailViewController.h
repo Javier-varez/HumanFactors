@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhraseMeasure.h"
 
-@interface HFPDetailViewController : UIViewController <UITextViewDelegate>
+@interface HFPDetailViewController : UIViewController <UITextViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UILabel *letterCountLabel;
-- (IBAction)resetButtonPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *secondsLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) PhraseMeasure *currentPhraseMeasure;
+@property (weak, nonatomic) IBOutlet UIImageView *tickImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *crossImageView;
+
+- (IBAction)SCValueChanged:(id)sender;
+- (IBAction)presentStats:(id)sender;
 @end

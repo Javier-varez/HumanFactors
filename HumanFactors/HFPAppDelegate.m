@@ -17,6 +17,9 @@
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0f]];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:188/255.0 green:18/255.0 blue:114/255.0 alpha:1.0f]];
+    [[UISegmentedControl appearance] setTintColor:[UIColor colorWithRed:188/255.0 green:18/255.0 blue:114/255.0 alpha:1.0f]];
+    
+    [[UIButton appearance] setTintColor:[UIColor colorWithRed:188/255.0 green:18/255.0 blue:114/255.0 alpha:1.0f]];
     
     [MagicalRecord setupCoreDataStack];
     
@@ -36,8 +39,7 @@
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
     
     HFPDetailViewController* controller = (HFPDetailViewController*)[nav topViewController];
-    [controller.textView resignFirstResponder];
-    [controller resetButtonPressed:nil];
+    if (controller isKindOfClass:[HFPDetailViewController class]) [controller.textView resignFirstResponder];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -55,5 +57,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [MagicalRecord cleanUp];
 }
+
+
 
 @end
