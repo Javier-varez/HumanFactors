@@ -13,6 +13,8 @@
 #import "tickGestureRecognizer.h"
 #import "crossGestureRecognizer.h"
 
+#import "FlipAnimationController.h"
+
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0)
 
@@ -26,6 +28,8 @@
     CGRect openKeyboardFrame;
     CGRect closedKeyboardFrame;
     BOOL setKeyboards;
+    
+    FlipAnimationController *_flipAnimation;
 }
 
 - (void)viewDidLoad
@@ -65,6 +69,8 @@
     [self.view addGestureRecognizer:crossGesture];
     
     self.crossImageView.alpha = 0.0;
+    
+    self.navigationController.delegate = self;
 }
 
 -(void)saveCurrentMeasure:(tickGestureRecognizer*)gesture {
@@ -240,13 +246,19 @@
         [alert show];
     }
     else {
-        UIStoryboard *Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
-        HFPStatsTableViewController *toVC = [Storyboard instantiateViewControllerWithIdentifier:@"StatsVC"];
-        [self.navigationController pushViewController:toVC animated:YES];
+        [self pushStatsViewController];
     }
 }
 
+-(void)pushStatsViewController {
+    UIStoryboard *Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    HFPStatsTableViewController *toVC = [Storyboard instantiateViewControllerWithIdentifier:@"StatsVC"];
+    
+    [self.textView resignFirstResponder];
+    
+    [self.navigationController pushViewController:toVC animated:YES];
+}
 
 #pragma mark Alert View Delegate Methods
 
@@ -266,11 +278,7 @@
             self.textView.text = @"";
         }
     }
-    
-    UIStoryboard *Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    
-    HFPStatsTableViewController *toVC = [Storyboard instantiateViewControllerWithIdentifier:@"StatsVC"];
-    [self.navigationController pushViewController:toVC animated:YES];
+    [self pushStatsViewController];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -283,6 +291,13 @@
     {
         return YES;
     }
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    if (!_flipAnimation) {
+        _flipAnimation = [[FlipAnimationController alloc] init];
+    }
+    return _flipAnimation;
 }
 
 @end

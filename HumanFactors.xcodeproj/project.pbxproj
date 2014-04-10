@@ -30,6 +30,9 @@
 		CF4CB52D18EE6401000E5A3D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB52C18EE6401000E5A3D /* QuartzCore.framework */; };
 		CF4CB52F18EE6406000E5A3D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB52E18EE6406000E5A3D /* AudioToolbox.framework */; };
 		CF4CB53118EE6414000E5A3D /* Fleksy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4CB53018EE6414000E5A3D /* Fleksy.framework */; };
+		CF4F623D18F717FC00204A25 /* ShrinkDismissAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4F623C18F717FC00204A25 /* ShrinkDismissAnimationController.m */; };
+		CF4F624018F7180F00204A25 /* FlipAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4F623F18F7180F00204A25 /* FlipAnimationController.m */; };
+		CF4F624318F7182100204A25 /* BouncePresentAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4F624218F7182100204A25 /* BouncePresentAnimationController.m */; };
 		CFA044F618F4E90B0037970F /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA044BD18F4E90B0037970F /* MagicalImportFunctions.m */; };
 		CFA044F718F4E90B0037970F /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA044BF18F4E90B0037970F /* NSAttributeDescription+MagicalDataImport.m */; };
 		CFA044F818F4E90B0037970F /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA044C118F4E90B0037970F /* NSEntityDescription+MagicalDataImport.m */; };
@@ -105,6 +108,12 @@
 		CF4CB52C18EE6401000E5A3D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CF4CB52E18EE6406000E5A3D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CF4CB53018EE6414000E5A3D /* Fleksy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fleksy.framework; sourceTree = "<group>"; };
+		CF4F623B18F717FC00204A25 /* ShrinkDismissAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShrinkDismissAnimationController.h; sourceTree = "<group>"; };
+		CF4F623C18F717FC00204A25 /* ShrinkDismissAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShrinkDismissAnimationController.m; sourceTree = "<group>"; };
+		CF4F623E18F7180F00204A25 /* FlipAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipAnimationController.h; sourceTree = "<group>"; };
+		CF4F623F18F7180F00204A25 /* FlipAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipAnimationController.m; sourceTree = "<group>"; };
+		CF4F624118F7182100204A25 /* BouncePresentAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncePresentAnimationController.h; sourceTree = "<group>"; };
+		CF4F624218F7182100204A25 /* BouncePresentAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncePresentAnimationController.m; sourceTree = "<group>"; };
 		CFA044BC18F4E90B0037970F /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		CFA044BD18F4E90B0037970F /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		CFA044BE18F4E90B0037970F /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -197,6 +206,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF04067818F71C3400B70E51 /* AnimationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF4F623B18F717FC00204A25 /* ShrinkDismissAnimationController.h */,
+				CF4F623C18F717FC00204A25 /* ShrinkDismissAnimationController.m */,
+				CF4F623E18F7180F00204A25 /* FlipAnimationController.h */,
+				CF4F623F18F7180F00204A25 /* FlipAnimationController.m */,
+				CF4F624118F7182100204A25 /* BouncePresentAnimationController.h */,
+				CF4F624218F7182100204A25 /* BouncePresentAnimationController.m */,
+			);
+			name = AnimationControllers;
+			sourceTree = "<group>";
+		};
 		CF4CB4E818EE5893000E5A3D = {
 			isa = PBXGroup;
 			children = (
@@ -244,10 +266,8 @@
 				CFFF158F18F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m */,
 				CF483F6918F5E0DC00FD3AF1 /* HFPUsernameViewController.h */,
 				CF483F6A18F5E0DC00FD3AF1 /* HFPUsernameViewController.m */,
-				CF483F6C18F609F600FD3AF1 /* tickGestureRecognizer.h */,
-				CF483F6D18F609F600FD3AF1 /* tickGestureRecognizer.m */,
-				CF483F7118F63FA900FD3AF1 /* crossGestureRecognizer.h */,
-				CF483F7218F63FA900FD3AF1 /* crossGestureRecognizer.m */,
+				CF04067818F71C3400B70E51 /* AnimationControllers */,
+				CF4F623A18F717DA00204A25 /* Gesture Recognizer */,
 				CFFF158D18F5882C00295274 /* Data Model */,
 				CF4CB50F18EE5894000E5A3D /* Images.xcassets */,
 				CFA044B918F4E90B0037970F /* MagicalRecord */,
@@ -287,6 +307,17 @@
 				CF4CB51F18EE5894000E5A3D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF4F623A18F717DA00204A25 /* Gesture Recognizer */ = {
+			isa = PBXGroup;
+			children = (
+				CF483F6C18F609F600FD3AF1 /* tickGestureRecognizer.h */,
+				CF483F6D18F609F600FD3AF1 /* tickGestureRecognizer.m */,
+				CF483F7118F63FA900FD3AF1 /* crossGestureRecognizer.h */,
+				CF483F7218F63FA900FD3AF1 /* crossGestureRecognizer.m */,
+			);
+			name = "Gesture Recognizer";
 			sourceTree = "<group>";
 		};
 		CFA044B918F4E90B0037970F /* MagicalRecord */ = {
@@ -514,8 +545,10 @@
 				CFA044F618F4E90B0037970F /* MagicalImportFunctions.m in Sources */,
 				CFA044F718F4E90B0037970F /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				CFA0450B18F4E90B0037970F /* MagicalRecord+iCloud.m in Sources */,
+				CF4F624318F7182100204A25 /* BouncePresentAnimationController.m in Sources */,
 				CFA0450318F4E90B0037970F /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				CFA0450618F4E90B0037970F /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				CF4F623D18F717FC00204A25 /* ShrinkDismissAnimationController.m in Sources */,
 				CF4CB50118EE5894000E5A3D /* main.m in Sources */,
 				CFA0450E18F4E90B0037970F /* MagicalRecord+ShorthandSupport.m in Sources */,
 				CFA044FF18F4E90B0037970F /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -532,6 +565,7 @@
 				CFA0450C18F4E90B0037970F /* MagicalRecord+Options.m in Sources */,
 				CFA044FB18F4E90B0037970F /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				CFA044FD18F4E90B0037970F /* NSManagedObject+MagicalAggregation.m in Sources */,
+				CF4F624018F7180F00204A25 /* FlipAnimationController.m in Sources */,
 				CFA0450518F4E90B0037970F /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				CFA044FE18F4E90B0037970F /* NSManagedObject+MagicalDataImport.m in Sources */,
 				CFFF159018F58ABD00295274 /* HFPPhraseMeasureTableViewCell.m in Sources */,

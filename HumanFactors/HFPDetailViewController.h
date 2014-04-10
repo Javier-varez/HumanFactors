@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PhraseMeasure.h"
 
-@interface HFPDetailViewController : UIViewController <UITextViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
+@interface HFPDetailViewController : UIViewController <UITextViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;

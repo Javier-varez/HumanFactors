@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HFPStatsTableViewController : UITableViewController <UIDocumentInteractionControllerDelegate, UIAlertViewDelegate>
+@interface HFPStatsTableViewController : UITableViewController <UIDocumentInteractionControllerDelegate, UIAlertViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) NSArray *dataArray;
 

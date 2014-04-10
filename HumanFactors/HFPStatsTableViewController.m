@@ -11,7 +11,13 @@
 #import "HFPPhraseMeasureTableViewCell.h"
 #import "HFPUsernameViewController.h"
 
-@interface HFPStatsTableViewController ()
+#import "BouncePresentAnimationController.h"
+#import "ShrinkDismissAnimationController.h"
+
+@interface HFPStatsTableViewController () {
+    BouncePresentAnimationController *_bounceAnimation;
+    ShrinkDismissAnimationController *_shrinkAnimation;
+}
 
 @end
 
@@ -117,6 +123,9 @@
         
         HFPUsernameViewController *userVC = [storyboard instantiateViewControllerWithIdentifier:@"UserVC"];
         userVC.allowSwipeDown = YES;
+        
+        userVC.transitioningDelegate = self;
+        
         [self presentViewController:userVC animated:YES completion:nil];
     }
 }
@@ -302,4 +311,21 @@
     self.dataArray = [[NSArray alloc] init];
     [self.tableView reloadData];
 }
+
+#pragma mark Transitioning delegate methods
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    if (!_bounceAnimation) {
+        _bounceAnimation = [[BouncePresentAnimationController alloc] init];
+    }
+    return _bounceAnimation;
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    if (!_shrinkAnimation) {
+        _shrinkAnimation = [[ShrinkDismissAnimationController alloc] init];
+    }
+    return _shrinkAnimation;
+}
+
 @end
