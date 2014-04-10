@@ -89,7 +89,7 @@
         cellForPhraseMeasure.efficiencyLabel.text = [NSString stringWithFormat:@"%.3f", (double)[measureForCurrentCell.text length]/[measureForCurrentCell.taps doubleValue]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"EEE dd 'de' MMMM 'a las' HH:mm";
+        dateFormatter.dateFormat = @"MMMM dd 'at' HH:mm";
         cellForPhraseMeasure.dateLabel.text = [dateFormatter stringFromDate:measureForCurrentCell.initialDate];
         
         cellForPhraseMeasure.keyboardLabel.text = measureForCurrentCell.keyboard;
