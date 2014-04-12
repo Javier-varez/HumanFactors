@@ -73,6 +73,18 @@
     self.navigationController.delegate = self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        self.textView.autocorrectionType = UITextAutocorrectionTypeNo;
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        self.textView.autocorrectionType = UITextAutocorrectionTypeYes;
+    }
+    else {
+        self.textView.autocorrectionType = UITextAutocorrectionTypeDefault;
+    }
+}
+
 -(void)saveCurrentMeasure:(tickGestureRecognizer*)gesture {
     NSLog(@"Tick Gesture received");
     
@@ -232,8 +244,18 @@
 - (IBAction)SCValueChanged:(id)sender {
     if (self.currentPhraseMeasure) {
         self.currentPhraseMeasure.keyboard = [self.segmentedControl titleForSegmentAtIndex:[self.segmentedControl selectedSegmentIndex]];
-
     }
+    [self.textView resignFirstResponder];
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        self.textView.autocorrectionType = UITextAutocorrectionTypeNo;
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        self.textView.autocorrectionType = UITextAutocorrectionTypeYes;
+    }
+    else {
+        self.textView.autocorrectionType = UITextAutocorrectionTypeDefault;
+    }
+    [self.textView becomeFirstResponder];
 }
 
 - (IBAction)presentStats:(id)sender {
